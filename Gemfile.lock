@@ -95,6 +95,8 @@ GEM
       concurrent-ruby (~> 1.0)
       zeitwerk (~> 2.6)
     erubi (1.12.0)
+    faker (3.2.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -174,6 +176,7 @@ GEM
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    table_print (1.5.7)
     thor (1.2.2)
     timeout (0.4.0)
     tzinfo (2.0.6)
@@ -198,11 +201,13 @@ DEPENDENCIES
   debug
   devise
   devise-jwt
+  faker
   jsonapi-serializer
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.7, >= 7.0.7.2)
+  table_print
   tzinfo-data
 
 RUBY VERSION
