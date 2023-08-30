@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles
   def create
-    @article = current_user.article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     if @article.save
       render json: @article, status: :created
@@ -39,9 +39,14 @@ class ArticlesController < ApplicationController
   end
 
   # DELETE /articles/1
-  def destroy
+ def destroy
+  if @article.user == current_user
     @article.destroy
+    head :no_content
+  else
+    render json: { error: "You don't have permission to delete this article." }, status: :forbidden
   end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.
